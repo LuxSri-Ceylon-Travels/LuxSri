@@ -76,8 +76,8 @@ if (form) {
   });
 }
 
-// Opened straight from disk (double-clicked index.html): point folder links at their index.html
-if (location.protocol === "file:") {
+// Opened from disk or a raw-file preview link (no folder index pages): point folder links at their index.html
+if (location.protocol === "file:" || /githack\.com$/.test(location.hostname)) {
   document.querySelectorAll('a[href]').forEach((a) => {
     const h = a.getAttribute("href");
     if (/^\.{1,2}\//.test(h)) a.setAttribute("href", h.replace(/\/(#.*)?$/, "/index.html$1"));
