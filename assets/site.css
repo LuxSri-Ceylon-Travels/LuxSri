@@ -310,3 +310,32 @@ section.band { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .copy { font: inherit; font-size: .8rem; font-weight: 700; padding: .3rem .75rem; border-radius: 999px; border: 1px solid var(--line); background: var(--sand); color: var(--forest); cursor: pointer; }
 .socials-dark a { color: var(--forest); border-color: var(--line); }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* Logo and tagline (from the LuxSri brand mark) */
+.brand-name { display: grid; gap: .2rem; justify-items: start; }
+.brand-logo { display: block; height: 34px; width: auto; }
+.brand-name small { padding-left: .15rem; }
+.foot-logo { display: inline-block; }
+.foot-logo img { display: block; width: 280px; max-width: 100%; height: auto; }
+.tagline { font-family: "Allura", "Snell Roundhand", cursive; font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem); line-height: 1.1; color: var(--gold-soft); margin: 0; letter-spacing: .01em; }
+.tagline-dark { color: var(--gold); }
+.hero .tagline, .page-hero .tagline { margin-top: -.2rem; font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.4rem); color: var(--gold-soft); max-width: none; }
+.quote-by.tagline { font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.1rem); }
+
+/* Day-by-day itineraries */
+.days-list .leg { display: block; font-family: var(--font-display); font-weight: 400; font-size: 1.12rem; color: var(--forest); margin-bottom: .35rem; }
+.stops { margin: 0; padding: 0; list-style: none; display: grid; gap: .25rem; }
+.days-list .stops li { display: block; border: 0; position: relative; padding: 0 0 0 1.05rem; color: var(--muted); font-size: .95rem; }
+.days-list .stops li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+.tours { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+@media (min-width: 821px) { .itin .meta { position: sticky; top: 96px; align-self: start; } }
+@media (max-width: 560px) { .days-list > li { grid-template-columns: 1fr; gap: .35rem; } }
+.quote-by.tagline { text-transform: none; letter-spacing: .01em; color: var(--gold-soft); }
+@media (min-width: 900px) {
+  .tour-custom { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); grid-template-rows: none; }
+  .tour-custom .img { aspect-ratio: auto; min-height: 220px; }
+  .tour-custom .body { align-content: center; padding: 2rem 2.25rem; }
+}
+/* Sigiriya couple photo: faces sit at the very top, so never crop from the top */
+img[src*="sigiriya-guests"] { object-position: 44% 0 !important; }
+.kenburns[src*="sigiriya-guests"] { transform-origin: 44% 0; }
