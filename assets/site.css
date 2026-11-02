@@ -339,3 +339,18 @@ section.band { padding-block: clamp(3.5rem, 8vw, 6rem); }
 /* Sigiriya couple photo: faces sit at the very top, so never crop from the top */
 img[src*="sigiriya-guests"] { object-position: 44% 0 !important; }
 .kenburns[src*="sigiriya-guests"] { transform-origin: 44% 0; }
+
+/* Tour packages: each tour is its own block, alternating shades */
+.tour-jump { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: 2rem; }
+.tour-jump span { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-right: .4rem; }
+.tour-jump a { text-decoration: none; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: .4rem .9rem; font-size: .9rem; color: var(--forest); }
+.tour-jump a b { color: var(--gold); font-weight: 700; margin-right: .2rem; }
+.tour-jump a:hover { border-color: var(--gold); }
+.itins { gap: 1.75rem; }
+.itin { scroll-margin-top: 88px; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--gold); border-radius: 10px; padding: clamp(1.25rem, 3vw, 2.25rem); box-shadow: 0 10px 30px rgba(18,53,44,.06); }
+.itin:last-child { border-bottom: 1px solid var(--line); padding-bottom: clamp(1.25rem, 3vw, 2.25rem); }
+.itin:nth-child(even) { background: #e9f0ec; border-color: #cfdcd4; border-top-color: var(--forest-2); }
+.itin:nth-child(even) .days-list li { border-bottom-color: #c9d8cf; }
+.itin:nth-child(even) .route li { background: #fff; }
+.itin-top { margin: 1.25rem 0 0; text-align: right; font-size: .88rem; }
+.itin-top a { color: var(--muted); }
