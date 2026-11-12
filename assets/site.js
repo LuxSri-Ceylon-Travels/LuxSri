@@ -160,3 +160,20 @@ document.querySelectorAll("[data-copy]").forEach((b) => {
     }).catch(() => {});
   });
 });
+
+
+/* Guest reviews: read more + carousel arrows */
+document.querySelectorAll('.rv-more').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var body = b.previousElementSibling, open = body.classList.toggle('is-clamped') === false;
+    b.textContent = open ? 'Show less' : 'Read more';
+    b.setAttribute('aria-expanded', open);
+  });
+});
+document.querySelectorAll('#reviews').forEach(function (s) {
+  var t = s.querySelector('.rv-track'); if (!t) return;
+  function step(d) { var c = t.querySelector('.rv'); t.scrollBy({ left: d * (c ? c.offsetWidth + 20 : 300), behavior: 'smooth' }); }
+  var p = s.querySelector('.rv-prev'), n = s.querySelector('.rv-next');
+  if (p) p.addEventListener('click', function () { step(-1); });
+  if (n) n.addEventListener('click', function () { step(1); });
+});
